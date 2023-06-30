@@ -2,8 +2,14 @@ import React from 'react'
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, TouchableOpacity, View, Image,  } from 'react-native';
 import SelectOpponentScreen from './SelectOpponentScreen'; 
+import { useNavigation } from '@react-navigation/native';
 
-const HomeScreen = (props) => {
+const HomeScreen = ({ navigation }) => {
+    //const navigation = useNavigation();
+
+    const goToNextScreen = () => {
+      navigation.navigate('SelectOpponentScreen');
+    };
 
     console.log("App running");
     const startGamePressed = () => {
@@ -27,7 +33,7 @@ const HomeScreen = (props) => {
             <View style={styles.row}>
               <View style={styles.buttonContainer}>
                 {/* <View style={styles.buttonBox} > */}
-                <TouchableOpacity style={styles.buttonBox} onPress={startGamePressed}>
+                <TouchableOpacity style={styles.buttonBox} onPress={goToNextScreen}>
                   <Button
                     title="Start Game"
                     color="white"

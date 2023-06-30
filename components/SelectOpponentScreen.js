@@ -5,7 +5,7 @@ import WordSlider from './WordSlider';
 const SelectOpponentScreen = ({ navigation }) => {
 
     const startGamePressed = () => {
-        console.log("Start Game Pressed");
+        navigation.navigate('YourWordsScreen');
 
     }
   return (

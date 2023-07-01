@@ -4,27 +4,39 @@ import LinearProgressOrange from './LinearProgressOrange'
 import { SafeAreaView } from 'react-native'
 import WordListItem from './WordListItem'
 import { Icon } from '@rneui/themed';
+import { Swipeable } from 'react-native-gesture-handler'
+import GestureRecognizer from 'react-native-swipe-gestures';
 
 
 const words = [ "Byzantine", "Amphibian", "Untoward", "Glacial", "Fanciful"]
 
 const WordListItemBlock = (word) => {
+
+
     return (  
+      
         <View style={styles.row}>
             <View style={styles.item6}>
                 <WordListItem word={word} />
             </View>
         </View>
+  
     )
 }
 
-const YourWordsScreen = ({ navigate }) => {
+const YourWordsScreen = ({ navigation }) => {
+  const handleSwipeUp = () => {
+    console.log("swiped up")
+    navigation.navigate('OpponentWordScreen');
+
+}
 
   return (
+    <GestureRecognizer onSwipeUp={handleSwipeUp}>
     <SafeAreaView style={{}}>
         <StatusBar style="auto" />
         <LinearProgressOrange />
-        <View style={styles.container2}>
+        <View style={styles.container2} >
             <View style={styles.row}>
                 <View style={styles.item}>
                     <Image source={require('../assets/sword.jpeg')} style={{width: 60, height: 100, }} resizeMode='contain' />
@@ -102,6 +114,7 @@ const YourWordsScreen = ({ navigate }) => {
         
 
     </SafeAreaView>
+    </GestureRecognizer>
 
   )
 }

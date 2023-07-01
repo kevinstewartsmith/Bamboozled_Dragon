@@ -1,11 +1,12 @@
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack'
 import HomeScreen from './components/HomeScreen';
 import SelectOpponentScreen from './components/SelectOpponentScreen';
 import YourWordsScreen from './components/YourWordsScreen';
+import OpponentWordScreen from './components/OpponentWordScreen';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 export default function App({navigation}) {
  
@@ -19,7 +20,12 @@ export default function App({navigation}) {
           
         />
         <Stack.Screen name="SelectOpponentScreen" component={SelectOpponentScreen} />
-        <Stack.Screen name="YourWordsScreen" component={YourWordsScreen} />
+        <Stack.Screen 
+          name="YourWordsScreen" 
+          component={YourWordsScreen} 
+
+        />
+        <Stack.Screen name="OpponentWordScreen" component={OpponentWordScreen} />
       </Stack.Navigator>
 
     

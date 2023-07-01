@@ -2,6 +2,7 @@ import React from 'react'
 //import { Slider, Icon } from "react-native-elements";
 import { Slider, } from '@rneui/themed';
 
+
 const WordSlider = () => {
 
     

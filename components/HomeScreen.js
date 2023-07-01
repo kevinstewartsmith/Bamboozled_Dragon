@@ -53,6 +53,7 @@ const HomeScreen = ({ navigation }) => {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: "#FFFFFF",
       },
       stackContainer: {
         flex: 1,
@@ -87,7 +88,7 @@ const HomeScreen = ({ navigation }) => {
       },
       buttonContainer: {
         flex: 1,
-        //backgroundColor: 'teal',
+        backgroundColor: 'white',
         // marginLeft: 40,
         // marginRight: 40,
         width: "100%",

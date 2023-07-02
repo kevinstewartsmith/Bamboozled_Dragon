@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, StatusBar, Image } from 'react-native'
-import React from 'react'
+import React, {useContext} from 'react'
 import LinearProgressOrange from './LinearProgressOrange'
 import { SafeAreaView } from 'react-native'
 import WordListItem from './WordListItem'
@@ -7,10 +7,13 @@ import { Icon } from '@rneui/themed';
 import { Swipeable } from 'react-native-gesture-handler'
 import GestureRecognizer from 'react-native-swipe-gestures';
 import TimerComponent from './TimeLeft'
+//import TimerComponent from './TimeLeft'
+import { TimerContext } from './TimerContext';
 
 const words = [ "Byzantine", "Amphibian", "Untoward", "Glacial", "Fanciful"]
 
 const WordListItemBlock = (word) => {
+  
 
 
     return (  
@@ -25,9 +28,12 @@ const WordListItemBlock = (word) => {
 }
 
 const YourWordsScreen = ({ navigation }) => {
+  const { percentComplete } = useContext(TimerContext);
+  
   const handleSwipeUp = () => {
     console.log("swiped up")
     navigation.navigate('OpponentWordScreen');
+    
 
 }
 
@@ -35,7 +41,7 @@ const YourWordsScreen = ({ navigation }) => {
     <GestureRecognizer onSwipeUp={handleSwipeUp}>
     <SafeAreaView style={{}}>
         <StatusBar style="auto" />
-        <LinearProgressOrange />
+        <LinearProgressOrange value={percentComplete} />
         <View style={styles.container2} >
             <View style={styles.row}>
                 <View style={styles.item}>

@@ -1,8 +1,12 @@
 import React from 'react'
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, TouchableOpacity, View, Image,  } from 'react-native';
+import { Button, StyleSheet, TouchableOpacity, View, Image, Text, AppRegistry  } from 'react-native';
 import SelectOpponentScreen from './SelectOpponentScreen'; 
 import { useNavigation } from '@react-navigation/native';
+//import { color } from 'react-native-reanimated';
+
+
+AppRegistry.registerComponent('BamboozledDragon', () => App);
 
 const HomeScreen = ({ navigation }) => {
     //const navigation = useNavigation();
@@ -34,11 +38,14 @@ const HomeScreen = ({ navigation }) => {
               <View style={styles.buttonContainer}>
                 {/* <View style={styles.buttonBox} > */}
                 <TouchableOpacity style={styles.buttonBox} onPress={goToNextScreen}>
-                  <Button
+                  
+                  {/* <Button
                     title="Start Game"
                     color="white"
-                    //style={styles.button}
-                  />
+                    //style={{ color:"white", fontSize:32, fontWeight:"bold" }}
+                    onPress={goToNextScreen}
+                  /> */}
+                  <Text style={{ color:"white", fontSize:22, fontWeight:"bold" }}>Start Game</Text>
                 </TouchableOpacity>
               </View> 
             </View>

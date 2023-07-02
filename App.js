@@ -13,7 +13,11 @@ export default function App({navigation}) {
   //const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Navigator  screenOptions={{
+          headerShown: false,
+          ...TransitionPresets.ModalSlideFromBottomIOS,
+           // Apply the transition preset
+        }}>
         <Stack.Screen
           name="Home"
           component={HomeScreen}
@@ -23,7 +27,10 @@ export default function App({navigation}) {
         <Stack.Screen 
           name="YourWordsScreen" 
           component={YourWordsScreen} 
-
+          screenOptions={{
+          headerShown: false,
+          ...TransitionPresets.ModalSlideFromBottomIOS, // Apply the transition preset
+        }}
         />
         <Stack.Screen name="OpponentWordScreen" component={OpponentWordScreen} />
       </Stack.Navigator>

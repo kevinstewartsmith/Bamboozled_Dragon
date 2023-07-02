@@ -164,10 +164,10 @@ const styles = StyleSheet.create({
     item2: {
         flex: 1,
         //backgroundColor: 'red',
-        marginTop: 10,
+        marginTop: 30,
         justifyContent: 'center',
         alignItems: 'center',
-        height: 30,
+        height: 20,
         backgroundColor:"transparent",
         // marginLeft: 50,
         // marginRight: 50,

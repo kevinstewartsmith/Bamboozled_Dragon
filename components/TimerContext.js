@@ -6,7 +6,7 @@ const TimerProvider = ({ children }) => {
   const [timer, setTimer] = useState(10 * 60); // 10 minutes in seconds
 
   // Function to start the timer
-  const startTimer = () => {
+  function startTimer() {
     const intervalId = setInterval(() => {
       setTimer((prevTimer) => prevTimer - 1);
     }, 1000); // Decrease the timer every second

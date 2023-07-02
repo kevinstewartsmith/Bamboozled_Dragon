@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { View, StatusBar, StyleSheet, Text, Button,TouchableOpacity } from 'react-native'
 //import { Button, } from '@rneui/themed';
 import WordSlider from './WordSlider';
-const SelectOpponentScreen = ({ navigation }) => {
+import { TimerContext } from './TimerContext';
 
+const SelectOpponentScreen = ({ navigation }) => {
+    const { timer, startTimer } = useContext(TimerContext);
     const startGamePressed = () => {
+        startTimer()
         navigation.navigate('YourWordsScreen');
 
     }
@@ -47,7 +50,8 @@ const SelectOpponentScreen = ({ navigation }) => {
         <View style={styles.row}>
             <TouchableOpacity style={styles.item5} onPress={startGamePressed}>
             
-                <Button title="I'm Ready" color="white" style={{fontSize: 32, fontWeight:"bold"}}> I'm Ready</Button>
+                {/* <Button title="I'm Ready" color="white" style={{fontSize: 32, fontWeight:"bold"}}> I'm Ready</Button> */}
+                <Text style={{color:"white", fontSize: 22, fontWeight:"bold"}}>Start Game</Text>
 
             </TouchableOpacity>
         </View>

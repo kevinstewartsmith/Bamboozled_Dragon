@@ -7,6 +7,7 @@ import { Icon } from '@rneui/themed';
 import { Swipeable } from 'react-native-gesture-handler'
 import GestureRecognizer from 'react-native-swipe-gestures';
 import WordGuessInput from './WordGuessInput'
+import TimerComponent from './TimeLeft'
 
 
 const words = [ "Byzantine", "Amphibian", "Untoward", "Glacial", "Fanciful"]
@@ -72,7 +73,7 @@ const YourWordsScreen = ({ navigation }) => {
               </View>
             </View>
 
-            <View style={styles.row}>
+            {/* <View style={styles.row}>
                 <View style={styles.item2}>
                     <Text style={{ fontSize: 12, fontWeight:"bold", color:"white" }}>TIME LEFT</Text>
                 </View>
@@ -82,7 +83,8 @@ const YourWordsScreen = ({ navigation }) => {
                 <View style={styles.item3}>
                     <Text style={{ fontSize: 48, fontWeight:"bold", color:"white" }}>9:56</Text>
                 </View>
-            </View>
+            </View> */}
+            <TimerComponent rowStyle={styles.row} itemStyle2={styles.item2} itemStyle3={styles.item3} color="white" />
             <View style={styles.row}>
                 <View style={styles.item4}>
                     <Text style={{ fontSize: 30, fontWeight:"bold", color:"white" }}>{"[Opponent]'s Words"}</Text>

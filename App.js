@@ -5,6 +5,7 @@ import HomeScreen from './components/HomeScreen';
 import SelectOpponentScreen from './components/SelectOpponentScreen';
 import YourWordsScreen from './components/YourWordsScreen';
 import OpponentWordScreen from './components/OpponentWordScreen';
+import { TimerProvider } from './components/TimerContext';
 
 const Stack = createStackNavigator();
 
@@ -13,6 +14,7 @@ export default function App({navigation}) {
   //const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
+      <TimerProvider>
       <Stack.Navigator  screenOptions={{
           headerShown: false,
           ...TransitionPresets.ModalSlideFromBottomIOS,
@@ -35,7 +37,7 @@ export default function App({navigation}) {
         <Stack.Screen name="OpponentWordScreen" component={OpponentWordScreen} />
       </Stack.Navigator>
 
-    
+    </TimerProvider>
     </NavigationContainer>     
   );
 }
